@@ -38,7 +38,7 @@ function Header() {
 
   return (
     <header>
-      <nav className="bg-transparent w-full fixed text-lg lg:text-base">
+      <nav className="bg-transparent w-full text-lg lg:text-base">
         <div className="flex flex-col lg:flex-row lg:justify-start gap-6 lg:gap-9 lg:items-center mx-auto px-6 lg:px-40 py-10 lg:py-0">
           <a href="#" className="flex items-center">
             <img src={Logo} className="mr-3 h-6" alt="Shortly Logo" />
@@ -52,7 +52,7 @@ function Header() {
             className={`absolute w-[90%] lg:static flex flex-col lg:flex-row lg:bg-transparent rounded-3xl lg:rounded-none lg:justify-between lg:w-full py-6 lg:py-2 bg-secondary-500 transition-all duration-500 ease-in-out ${
               isOpen && windowSize[0] < 1024
                 ? "top-24 left-1/2 -translate-x-1/2"
-                : "left-[500px] scale-0 top-[-100px] opacity-0"
+                : "left-1/2 scale-0 top-[-100px] opacity-0"
             } ${windowSize[0] >= 1024 ? "scale-100 opacity-100" : ""}`}
           >
             <ul className="flex flex-col lg:flex-row lg:gap-5 items-center px-2">
