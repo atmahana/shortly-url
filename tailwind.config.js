@@ -6,6 +6,13 @@ export default {
       width: {
         25: "6.5rem",
       },
+      height: {
+        "60vh": "60vh",
+        "80vh": "80vh",
+      },
+      translate: {
+        22: "5.5rem",
+      },
       colors: {
         primary: {
           200: "#95e7e7",

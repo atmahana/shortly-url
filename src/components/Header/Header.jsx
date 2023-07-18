@@ -8,11 +8,6 @@ const LINKS = [
   { name: "Resources", path: "/" },
 ];
 
-const AUTH = [
-  { name: "Login", path: "/" },
-  { name: "Sign Up", path: "/" },
-];
-
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [windowSize, setWindowSize] = useState([
@@ -39,21 +34,21 @@ function Header() {
   return (
     <header>
       <nav className="bg-transparent w-full text-lg lg:text-base">
-        <div className="flex flex-col lg:flex-row lg:justify-start gap-6 lg:gap-9 lg:items-center mx-auto px-6 lg:px-40 py-10 lg:py-0">
+        <div className="flex flex-col lg:flex-row lg:justify-start gap-6 lg:gap-9 lg:items-center mx-auto px-6 lg:px-40 pt-10 lg:py-0">
           <a href="#" className="flex items-center">
             <img src={Logo} className="mr-3 h-6" alt="Shortly Logo" />
           </a>
           <HamburgerIcon
-            classes="lg:hidden absolute right-4 top-9 cursor-pointer"
+            classes="lg:hidden absolute right-4 top-7 cursor-pointer"
             onClick={clickHandler}
             isOpen={isOpen}
           />
           <div
             className={`absolute w-[90%] lg:static flex flex-col lg:flex-row lg:bg-transparent rounded-3xl lg:rounded-none lg:justify-between lg:w-full py-6 lg:py-2 bg-secondary-500 transition-all duration-500 ease-in-out ${
               isOpen && windowSize[0] < 1024
-                ? "top-24 left-1/2 -translate-x-1/2"
-                : "left-1/2 scale-0 top-[-100px] opacity-0"
-            } ${windowSize[0] >= 1024 ? "scale-100 opacity-100" : ""}`}
+                ? "top-20 left-1/2 -translate-x-1/2 z-50"
+                : "left-1/2 scale-0 top-[-100px] opacity-0 z-50"
+            } ${windowSize[0] >= 1024 && "scale-100 opacity-100"}`}
           >
             <ul className="flex flex-col lg:flex-row lg:gap-5 items-center px-2">
               {LINKS.map((link) => (
@@ -66,7 +61,10 @@ function Header() {
               ))}
             </ul>
             <div className="flex flex-col lg:flex-row border-t-[1px] lg:border-none w-10/12 self-center border-secondary-300 justify-between lg:justify-end lg:gap-10 items-center">
-              <a href="/" className="text-neutralCustom-300 hover:text-neutralCustom-900 font-bold my-4">
+              <a
+                href="/"
+                className="text-neutralCustom-300 hover:text-neutralCustom-900 font-bold my-4"
+              >
                 Login
               </a>
               <button className="bg-primary-500 px-7 py-3 lg:px-0 rounded-full w-full lg:w-28 font-bold text-white hover:bg-primary-200 my-4">
