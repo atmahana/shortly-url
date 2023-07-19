@@ -11,7 +11,7 @@ function HeroSection() {
         <h1 className="text-[2.625rem] lg:text-[5rem] font-bold tracking-[-20.5%] text-neutralCustom-900 m-0 mb-7 lg:mb-3">
           More than just shorter links
         </h1>
-        <p className="text-neutralCustom-300 text-[19px] lg:text-[22px] mb-7 leading-relaxed pr-40">
+        <p className="text-neutralCustom-300 text-[19px] lg:text-[22px] mb-7 leading-relaxed lg:pr-40">
           Build your brand’s recognition and get detailed insights on how your
           links are performing.
         </p>
