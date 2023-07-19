@@ -1,6 +1,6 @@
 function Input() {
   return (
-    <div className="bg-secondary-500 p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
+    <div className="bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
       <input
         type="text"
         name="input"
@@ -36,8 +36,8 @@ function Result() {
   return (
     <ul className="flex flex-col gap-4 lg:text-xl">
       {RESULT.map((result) => (
-        <li className="bg-white shadow-lg border rounded-lg lg:flex lg:justify-between lg:items-center">
-          <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden border-b-2 lg:border-none">{result.oriLink}</p>
+        <li className="bg-white shadow-lg border rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2">
+          <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">{result.oriLink}</p>
           <div className="flex flex-col lg:flex-row lg:items-center p-[18px] gap-4 lg:gap-6">
             <span className="text-primary-500">{result.shortLink}</span>
             <button className="bg-primary-500 hover:bg-primary-200 active:bg-secondary-500 h-10 rounded-md font-bold text-white lg:w-25 text-base">Copy</button>

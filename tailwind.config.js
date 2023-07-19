@@ -30,6 +30,12 @@ export default {
           900: "hsl(260, 8%, 14%)",
         },
       },
+      backgroundImage: {
+        "boost-desktop": "url('/public/background/bg-boost-desktop.svg')",
+        "boost-mobile": "url('/public/background/bg-boost-mobile.svg')",
+        "shorten-desktop": "url('/public/background/bg-shorten-desktop.svg')",
+        "shorten-mobile": "url('/public/background/bg-shorten-mobile.svg')",
+      },
     },
   },
   plugins: [],
