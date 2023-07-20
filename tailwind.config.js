@@ -10,6 +10,9 @@ export default {
         "60vh": "60vh",
         "80vh": "80vh",
       },
+      padding: {
+        22: "5.5rem",
+      },
       translate: {
         22: "5.5rem",
       },
@@ -19,6 +22,7 @@ export default {
           500: "#2acfcf",
         },
         secondary: {
+          200: "#f0f1f6",
           300: "#625976",
           500: "#3b3054",
         },
@@ -31,10 +35,10 @@ export default {
         },
       },
       backgroundImage: {
-        "boost-desktop": "url('/public/background/bg-boost-desktop.svg')",
-        "boost-mobile": "url('/public/background/bg-boost-mobile.svg')",
-        "shorten-desktop": "url('/public/background/bg-shorten-desktop.svg')",
-        "shorten-mobile": "url('/public/background/bg-shorten-mobile.svg')",
+        "boost-desktop": "url('/background/bg-boost-desktop.svg')",
+        "boost-mobile": "url('/background/bg-boost-mobile.svg')",
+        "shorten-desktop": "url('/background/bg-shorten-desktop.svg')",
+        "shorten-mobile": "url('/background/bg-shorten-mobile.svg')",
       },
     },
   },

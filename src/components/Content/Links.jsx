@@ -1,6 +1,6 @@
 function Input() {
   return (
-    <div className="bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
+    <div className="absolute w-full -top-20 lg:-top-1/3 bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
       <input
         type="text"
         name="input"
@@ -34,9 +34,9 @@ const RESULT = [
 
 function Result() {
   return (
-    <ul className="flex flex-col gap-4 lg:text-xl">
+    <ul className="flex flex-col gap-4 lg:text-xl pt-36 lg:pt-22">
       {RESULT.map((result) => (
-        <li className="bg-white shadow-lg border rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2">
+        <li className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2">
           <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">{result.oriLink}</p>
           <div className="flex flex-col lg:flex-row lg:items-center p-[18px] gap-4 lg:gap-6">
             <span className="text-primary-500">{result.shortLink}</span>
@@ -50,7 +50,7 @@ function Result() {
 
 function LinkShort() {
   return (
-    <div>
+    <div className="relative mt-[88px] lg:mt-32">
       <Input />
       <Result />
     </div>
