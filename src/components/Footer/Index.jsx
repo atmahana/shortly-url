@@ -64,7 +64,7 @@ function Footer() {
                 <h4 className="text-white font-bold">{content.title}</h4>
                 <div className="grid gap-5">
                   {content.links.map((link) => (
-                    <a href="/" className="text-neutralCustom-200">
+                    <a key={link} href="/" className="text-neutralCustom-200">
                       {link}
                     </a>
                   ))}
@@ -75,7 +75,7 @@ function Footer() {
           <ul className="flex justify-center gap-[18px] lg:gap-6">
             {FOOTER_SOCIALS.map((social) => {
               return (
-                <li>
+                <li key={social.name}>
                   <a href="/" name={social.name}>
                     <span className="sr-only">{social.name} links</span>
                     <img aria-label={social.name} src={social.icon} />

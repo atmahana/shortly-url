@@ -36,7 +36,7 @@ function Result() {
   return (
     <ul className="flex flex-col gap-4 lg:text-xl pt-36 lg:pt-22">
       {RESULT.map((result) => (
-        <li className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2">
+        <li key={result.id} className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2">
           <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">{result.oriLink}</p>
           <div className="flex flex-col lg:flex-row lg:items-center p-[18px] gap-4 lg:gap-6">
             <span className="text-primary-500">{result.shortLink}</span>

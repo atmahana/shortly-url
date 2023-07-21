@@ -4,18 +4,21 @@ import FullyCustom from "../../assets/icon/icon-fully-customizable.svg";
 
 const FEATURES = [
   {
+    id: "1",
     title: "Brand Recognition",
     content:
       "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
     icon: BrandRecog,
   },
   {
+    id: "2",
     title: "Detailed Records",
     content:
       "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
     icon: DetailedRec,
   },
   {
+    id: "3",
     title: "Fully Customizable",
     content:
       "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
@@ -40,6 +43,7 @@ function StatNFeatures() {
       <ul className="grid gap-12 lg:gap-x-7 lg:gap-y-0 lg:grid-cols-3 text-center lg:text-start justify-center items-center lg:mb-20 relative">
         {FEATURES.map((feature, index) => (
           <li
+            key={feature.id}
             className={`bg-white z-10 rounded-md px-[26px] py-9 grid gap-6 relative top-${
               index * 10
             }`}
