@@ -2,7 +2,6 @@ import { useState } from "react";
 
 const useHttp = (longUrl) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
   const clickHandler = async () => {
@@ -16,7 +15,12 @@ const useHttp = (longUrl) => {
         setError({ errorCode: data.error_code, errorMessage: data.error });
       } else {
         console.log(data);
-        setData(data.result);
+
+        await db.shorturls.add({
+          oriUrl: data.result.original_link,
+          longUrl: data.result.full_short_link,
+          shortUrl: data.result.short_link,
+        });
       }
     } catch (err) {
       setError(err.message || "Something went wrong!");
@@ -26,7 +30,6 @@ const useHttp = (longUrl) => {
 
   return {
     isLoading,
-    data,
     error,
     clickHandler,
   };
