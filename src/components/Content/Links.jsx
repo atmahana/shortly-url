@@ -1,5 +1,5 @@
 import { forwardRef, useState, useRef } from "react";
-import useHttp from "../../hooks/use-http";
+import useCreateShortLink from "../../hooks/use-createShortLink";
 import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../db";
 
@@ -33,7 +33,7 @@ function Result() {
   
   return (
     <ul className="flex flex-col gap-4 lg:text-xl pt-36 lg:pt-22">
-      {results?.map((result, index) => (
+      {results?.map((result) => (
         <li
           key={result.id}
           className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2"
@@ -55,40 +55,13 @@ function Result() {
 
 function LinkShort() {
   const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  // const { data, isLoading, error, clickHandler } = useHttp(input);
+  const {isLoading, error, clickHandler} =  useCreateShortLink(input);
   const inputRef = useRef();
 
   const changeHandler = (event) => {
     setInput(event.target.value);
   };
-
-  const clickHandler = async () => {
-    setIsLoading(true);
-    try {
-      const res = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${input}`
-      );
-      const data = await res.json();
-      if (!data.ok) {
-        setError({ errorCode: data.error_code, errorMessage: data.error });
-      } else {
-        console.log(data);
-
-        await db.shorturls.add({
-          oriUrl: data.result.original_link,
-          longUrl: data.result.full_short_link,
-          shortUrl: data.result.short_link,
-        });
-      }
-    } catch (err) {
-      console.log(err);
-      setError(err.message || "Something went wrong!");
-    }
-    setIsLoading(false);
-  };
-
+  
   return (
     <div className="relative mt-[88px] lg:mt-32">
       <Input

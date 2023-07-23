@@ -1,15 +1,14 @@
 import { useState } from "react";
+import { db } from "../db";
 
-const useHttp = (longUrl) => {
+const useCreateShortLink = (input) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const clickHandler = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${longUrl}`
-      );
+      const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${input}`);
       const data = await res.json();
       if (!data.ok) {
         setError({ errorCode: data.error_code, errorMessage: data.error });
@@ -23,6 +22,7 @@ const useHttp = (longUrl) => {
         });
       }
     } catch (err) {
+      console.log(err);
       setError(err.message || "Something went wrong!");
     }
     setIsLoading(false);
@@ -35,4 +35,4 @@ const useHttp = (longUrl) => {
   };
 };
 
-export default useHttp;
+export default useCreateShortLink;
