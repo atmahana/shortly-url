@@ -4,7 +4,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import { db } from "../../db";
 
 const Input = forwardRef(function (
-  { onChange, inputValue, onClick, isLoading },
+  { onChange, inputValue, onClick, isLoading, hasError },
   ref
 ) {
   return (
@@ -14,10 +14,17 @@ const Input = forwardRef(function (
         type="text"
         name="input"
         placeholder="Shorten a link here..."
-        className="h-12 lg:h-16 w-full lg:w-4/5 rounded-lg px-4 lg:px-8 lg:text-xl"
+        className={`h-12 lg:h-16 w-full lg:w-4/5 rounded-lg px-4 lg:px-8 lg:text-xl ${
+          hasError && "border-2 border-danger"
+        }`}
         onChange={onChange}
         value={inputValue}
       />
+      {hasError ? (
+        <span className="absolute text-danger italic bottom-9">
+          Please add a link
+        </span>
+      ) : null}
       <button
         onClick={onClick}
         className="bg-primary-500 hover:bg-primary-200 h-12 lg:h-16 w-full lg:w-1/5 rounded-lg text-white font-bold lg:text-xl"
@@ -37,7 +44,7 @@ function Result() {
     navigator.clipboard.writeText(result.longUrl);
     setActiveButton(result.longUrl);
 
-    setTimeout(() => setActiveButton(null), 4000);
+    setTimeout(() => setActiveButton(null), 3000);
   };
 
   const handleOutsideClick = (event) => {
@@ -59,34 +66,36 @@ function Result() {
   }, [activeButton]);
 
   return (
-    <ul
-      ref={buttonListRef}
-      className="flex flex-col gap-4 lg:text-xl pt-36 lg:pt-22"
-    >
-      {results?.map((result) => (
-        <li
-          key={result.id}
-          className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2 lg:divide-y-0 lg:h-20"
-        >
-          <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">
-            {result?.oriUrl}
-          </p>
-          <div className="flex flex-col lg:flex-row lg:items-center p-[18px] gap-4 lg:gap-6">
-            <span className="text-primary-500">{result?.longUrl}</span>
-            <button
-              onClick={() => handleButtonClick(result)}
-              className={`${
-                activeButton === result.longUrl
-                  ? "bg-secondary-500"
-                  : "bg-primary-500 hover:bg-primary-200"
-              }  h-10 rounded-md font-bold text-white lg:w-25 text-base`}
-            >
-              {activeButton === result.longUrl ? "Copied!" : "Copy"}
-            </button>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className="pt-28">
+      <ul
+        ref={buttonListRef}
+        className="w-full flex flex-col gap-4 lg:text-xl lg:pt-2 overflow-y-scroll h-80"
+      >
+        {results?.map((result) => (
+          <li
+            key={result.id}
+            className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2 lg:divide-y-0 lg:h-20"
+          >
+            <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">
+              {result?.oriUrl}
+            </p>
+            <div className="flex flex-col lg:flex-row lg:items-center p-[18px] gap-4 lg:gap-6">
+              <span className="text-primary-500">{result?.longUrl}</span>
+              <button
+                onClick={() => handleButtonClick(result)}
+                className={`${
+                  activeButton === result.longUrl
+                    ? "bg-secondary-500"
+                    : "bg-primary-500 hover:bg-primary-200"
+                }  h-10 rounded-md font-bold text-white lg:w-25 text-base`}
+              >
+                {activeButton === result.longUrl ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -107,6 +116,7 @@ function LinkShort() {
         inputValue={input}
         onClick={clickHandler}
         isLoading={isLoading}
+        hasError={error}
       />
       <Result />
     </div>

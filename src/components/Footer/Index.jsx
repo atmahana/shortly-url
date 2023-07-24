@@ -1,8 +1,8 @@
 import Logo from "../../assets/logo-white.svg";
-import Facebook from "../../assets/icon/icon-facebook.svg";
-import Twitter from "../../assets/icon/icon-twitter.svg";
-import Pinterest from "../../assets/icon/icon-pinterest.svg";
-import Instagram from "../../assets/icon/icon-instagram.svg";
+import Facebook from "../Icons/Facebook";
+import Instagram from "../Icons/Instagram";
+import Twitter from "../Icons/Twitter";
+import Pinterest from "../Icons/Pinterest";
 
 const FOOTER_CONTENTS = [
   {
@@ -22,19 +22,19 @@ const FOOTER_CONTENTS = [
 const FOOTER_SOCIALS = [
   {
     name: "Facebook",
-    icon: Facebook,
+    icon: <Facebook />,
   },
   {
     name: "Twitter",
-    icon: Twitter,
+    icon: <Twitter />,
   },
   {
     name: "Pinterest",
-    icon: Pinterest,
+    icon: <Pinterest />,
   },
   {
     name: "Instagram",
-    icon: Instagram,
+    icon: <Instagram />,
   },
 ];
 
@@ -78,7 +78,7 @@ function Footer() {
                 <li key={social.name}>
                   <a href="/" name={social.name}>
                     <span className="sr-only">{social.name} links</span>
-                    <img aria-label={social.name} src={social.icon} />
+                    {social.icon}
                   </a>
                 </li>
               );
