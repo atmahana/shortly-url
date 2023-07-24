@@ -63,7 +63,7 @@ function StatNFeatures() {
           </li>
         ))}
         <div className="absolute border-4 border-primary-500 w-1/3 rotate-90 top-64 left-1/2 -translate-x-1/2 lg:rotate-0 lg:w-1/6 lg:left-1/3 lg:top-1/2" />
-        <div className="absolute border-4 border-primary-500 w-1/3 rotate-90 bottom-56 left-1/2 -translate-x-1/2 lg:rotate-0 lg:w-1/6 lg:left-2/3 lg:top-1/2" />
+        <div className="absolute border-4 border-primary-500 w-1/3 rotate-90 bottom-64 left-1/2 -translate-x-1/2 lg:rotate-0 lg:w-1/6 lg:left-2/3 lg:top-1/2" />
       </ul>
     </div>
   );
