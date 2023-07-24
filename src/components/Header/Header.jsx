@@ -44,7 +44,7 @@ function Header() {
             isOpen={isOpen}
           />
           <div
-            className={`absolute w-[90%] lg:static flex flex-col lg:flex-row lg:bg-transparent rounded-3xl lg:rounded-none lg:justify-between lg:w-full py-6 lg:py-2 bg-secondary-500 transition-all duration-500 ease-in-out ${
+            className={`absolute lg:static flex flex-col lg:flex-row lg:bg-transparent rounded-3xl lg:rounded-none lg:justify-between w-[90%] lg:w-full py-6 lg:py-2 bg-secondary-500 transition-all duration-500 ease-in-out ${
               isOpen && windowSize[0] < 1024
                 ? "top-20 left-1/2 -translate-x-1/2 z-50"
                 : "left-1/2 scale-0 top-[-100px] opacity-0 z-50"

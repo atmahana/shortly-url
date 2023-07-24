@@ -8,7 +8,7 @@ const Input = forwardRef(function (
   ref
 ) {
   return (
-    <div className="absolute w-full -top-20 lg:-top-1/3 bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
+    <div className="absolute w-full -top-20 lg:-top-1/4 bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
       <input
         ref={ref}
         type="text"
@@ -66,7 +66,7 @@ function Result() {
       {results?.map((result) => (
         <li
           key={result.id}
-          className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2 lg:divide-y-0 h-20"
+          className="bg-white rounded-lg lg:flex lg:justify-between lg:items-center divide-y-2 lg:divide-y-0 lg:h-20"
         >
           <p className="p-[18px] whitespace-nowrap text-ellipsis overflow-hidden">
             {result?.oriUrl}

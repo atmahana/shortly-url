@@ -51,11 +51,11 @@ function StatNFeatures() {
             <div className="grid justify-center relative">
               <img
                 src={feature.icon}
-                className="bg-secondary-500 rounded-full p-3 w-16 absolute -top-[70px] left-1/2 -translate-x-1/2 lg:left-8"
+                className="bg-secondary-500 rounded-full overflow-visible p-4 w-16 absolute -top-[70px] left-1/2 -translate-x-1/2 lg:left-8"
               />
             </div>
             <h4 className="text-[22px] font-bold text-neutralCustom-900">
-              {feature.title} {index}
+              {feature.title}
             </h4>
             <p className="text-neutralCustom-300 text-base leading-normal tracking-normal">
               {feature.content}
