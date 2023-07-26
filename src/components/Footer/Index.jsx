@@ -56,15 +56,20 @@ function Footer() {
     <div>
       <BoostSection />
       <footer className="w-full h-full bg-neutralCustom-700 py-14 grid md:grid-flow-col place-content-center md:place-content-start md:justify-between md:px-[165px] text-center lg:text-start gap-14">
-        <img src={Logo} alt="Shortly Logo" />
+        <div className="w-full grid place-content-center lg:place-content-start">
+          <img src={Logo} alt="Shortly Logo" width="121" height="33"/>
+        </div>
         <div className="grid gap-[54px] lg:grid-flow-col lg:gap-24">
           <ul className="grid gap-8 lg:gap-20 lg:grid-flow-col lg:place-self-end">
             {FOOTER_CONTENTS.map((content) => (
-              <li key={content.title} className="grid gap-8">
-                <h4 className="text-white font-bold">{content.title}</h4>
+              <li
+                key={content.title}
+                className="grid gap-8 md:place-content-start"
+              >
+                <span className="text-white font-bold">{content.title}</span>
                 <div className="grid gap-5">
                   {content.links.map((link) => (
-                    <a key={link} href="/" className="text-neutralCustom-200">
+                    <a key={link} href="/" className="text-neutralCustom-200 hover:text-primary-500">
                       {link}
                     </a>
                   ))}

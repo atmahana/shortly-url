@@ -2,6 +2,7 @@ import HeroSection from "./components/Hero";
 import MainContent from "./components/Content/Index";
 import Footer from "./components/Footer/Index";
 import Header from "./components/Header/Header";
+import Attribution from "./components/Attribution";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <HeroSection />
       <MainContent />
       <Footer />
+      <Attribution/>
     </>
   );
 }

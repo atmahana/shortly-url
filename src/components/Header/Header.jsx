@@ -36,7 +36,7 @@ function Header() {
       <nav className="bg-transparent w-full text-lg lg:text-base">
         <div className="flex flex-col lg:flex-row lg:justify-start gap-6 lg:gap-9 lg:items-center mx-auto px-6 lg:px-40 pt-10 lg:py-0">
           <a href="#" className="flex items-center">
-            <img src={Logo} className="mr-3 h-6" alt="Shortly Logo" />
+            <img src={Logo} className="mr-3 h-6" alt="Shortly Logo" width="90" height="33"/>
           </a>
           <HamburgerIcon
             classes="lg:hidden absolute right-4 top-7 cursor-pointer"

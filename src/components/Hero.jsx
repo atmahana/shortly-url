@@ -5,6 +5,7 @@ function HeroSection() {
     <div className="px-6 lg:px-40 pb-[88px] lg:pb-0 overflow-hidden">
       <div className="grid items-end lg:grid-flow-col lg:items-center text-center lg:text-start h-80vh lg:h-60vh relative">
         <img
+          alt="Hero section working illustration"
           src={Illustration}
           className="absolute md:static z-20 lg:order-1 scale-150 sm:max-lg:scale-100 lg:max-[1440px]:scale-150 min-[1441px]:scale-110 top-20 sm:max-lg:top-0 translate-x-22 sm:max-lg:translate-x-5 lg:max-[1440px]:translate-x-36 min-[1441px]:-translate-x-10"
         />

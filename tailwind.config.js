@@ -13,6 +13,9 @@ export default {
       padding: {
         22: "5.5rem",
       },
+      margin: {
+        22: "5.5rem",
+      },
       translate: {
         22: "5.5rem",
       },

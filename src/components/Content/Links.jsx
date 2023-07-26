@@ -69,7 +69,7 @@ function Result() {
     <div className="pt-28">
       <ul
         ref={buttonListRef}
-        className="w-full flex flex-col gap-4 lg:text-xl lg:pt-2 overflow-y-scroll h-80"
+        className="w-full flex flex-col gap-4 lg:text-xl lg:pt-2"
       >
         {results?.map((result) => (
           <li
@@ -109,7 +109,7 @@ function LinkShort() {
   };
 
   return (
-    <div className="relative mt-[88px] lg:mt-32">
+    <div className="relative mt-22 lg:mt-32">
       <Input
         ref={inputRef}
         onChange={changeHandler}
