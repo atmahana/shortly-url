@@ -8,7 +8,7 @@ const Input = forwardRef(function (
   ref
 ) {
   return (
-    <div className="absolute w-full -top-20 lg:-top-1/4 bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
+    <div className="absolute w-full -top-20 lg:-top-24 bg-secondary-500 bg-shorten-mobile md:bg-shorten-desktop bg-no-repeat bg-right-top md:bg-center md:bg-cover p-6 lg:p-16 flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rounded-[10px]">
       <input
         ref={ref}
         type="text"
@@ -109,7 +109,7 @@ function LinkShort() {
   };
 
   return (
-    <div className="relative mt-22 lg:mt-32">
+    <div className="relative mt-22 lg:mt-20">
       <Input
         ref={inputRef}
         onChange={changeHandler}
